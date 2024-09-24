@@ -22,7 +22,8 @@ class OnboardingView extends StatelessWidget {
             //const Text("Jetour"),
             Row(
               children: [
-                
+                Image.asset("assets/image/app-icon.png"),
+                SizedBox(width: 4),
                 Text("JETOUR"),
               ],
             ),
