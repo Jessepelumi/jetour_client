@@ -9,7 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  
+  # utility packages
+  smooth_page_indicator: ^1.2.0+3
 
   cupertino_icons: ^1.0.6
 
@@ -27,9 +29,8 @@ flutter:
 
   uses-material-design: true
 
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/image/
 
   # fonts:
   #   - family: Schyler
