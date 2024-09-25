@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jetour_client/core/util/colors.dart';
 
 class OnboardingGreeting extends StatelessWidget {
   const OnboardingGreeting({
@@ -17,9 +18,11 @@ class OnboardingGreeting extends StatelessWidget {
             vertical: 4,
           ),
           decoration: BoxDecoration(
-            color: Colors.blue[50],
+            color: primary.withOpacity(0.1),
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: Colors.blue),
+            border: Border.all(
+              color: primary.withOpacity(0.3),
+            ),
           ),
           child: const Text("Hello there!👋"),
         ),
