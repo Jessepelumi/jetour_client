@@ -38,10 +38,10 @@ class OnboardingView extends StatelessWidget {
             ),
             Text(
               subtitle,
-              style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                    color: lightGrey,
-                    fontSize: smallMedium
-                  ),
+              style: Theme.of(context)
+                  .textTheme
+                  .labelLarge
+                  ?.copyWith(color: lightGrey, fontSize: smallMedium),
             ),
           ],
         ),
