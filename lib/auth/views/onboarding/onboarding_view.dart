@@ -1,6 +1,7 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:jetour_client/auth/views/shared/login_link.dart';
 import 'package:jetour_client/core/util/colors.dart';
+import 'package:jetour_client/core/util/sizes.dart';
 
 class OnboardingView extends StatelessWidget {
   const OnboardingView({
@@ -39,12 +40,12 @@ class OnboardingView extends StatelessWidget {
               subtitle,
               style: Theme.of(context).textTheme.labelLarge?.copyWith(
                     color: lightGrey,
-                    fontSize: 14,
+                    fontSize: smallMedium
                   ),
             ),
           ],
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: small),
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
@@ -53,26 +54,7 @@ class OnboardingView extends StatelessWidget {
             // style: ,
           ),
         ),
-        RichText(
-          text: TextSpan(
-            children: [
-              TextSpan(
-                text: "Already have an account? ",
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      color: lightGrey,
-                    ),
-              ),
-              TextSpan(
-                text: "Login here",
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      color: primary,
-                      fontWeight: FontWeight.bold,
-                    ),
-                recognizer: TapGestureRecognizer()..onTap = () {},
-              ),
-            ],
-          ),
-        ),
+        const LoginLink(),
       ],
     );
   }
