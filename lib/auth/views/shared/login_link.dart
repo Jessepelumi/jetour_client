@@ -13,7 +13,7 @@ class LoginLink extends StatelessWidget {
       text: TextSpan(
         children: [
           TextSpan(
-            text: "Already have an account? ",
+            text: "Already have an accounti? ",
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                 color: lightGrey, fontWeight: FontWeight.bold),
           ),
