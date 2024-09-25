@@ -1,5 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:jetour_client/auth/views/onboarding/widgets/dot_navigation.dart';
+import 'package:jetour_client/core/util/colors.dart';
 
 class OnboardingView extends StatelessWidget {
   const OnboardingView({
@@ -7,9 +8,10 @@ class OnboardingView extends StatelessWidget {
     required this.image,
     required this.title,
     required this.subtitle,
+    required this.buttonText,
   });
 
-  final String image, title, subtitle;
+  final String image, title, subtitle, buttonText;
 
   @override
   Widget build(BuildContext context) {
@@ -19,48 +21,58 @@ class OnboardingView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            //const Text("Jetour"),
-            Row(
-              children: [
-                Image.asset("assets/image/app-icon.png"),
-                SizedBox(width: 4),
-                Text("JETOUR"),
-              ],
-            ),
             Image.asset(
               image,
-              height: MediaQuery.of(context).size.height * 0.5,
+              height: MediaQuery.of(context).size.height * 0.55,
             ),
-
-            // dot indicator
-            const DotNavigation(),
-
-            //
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 14),
-              child: Container(
-                child: Text("Hello there!👋"),
-                padding: EdgeInsets.symmetric(
-                  horizontal: 14,
-                  vertical: 4,
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.blue[50],
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: Colors.blue),
-                ),
-              ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.01,
             ),
-            Text(title),
-            Text(subtitle),
+            Text(
+              title,
+              style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: black,
+                  ),
+            ),
+            Text(
+              subtitle,
+              style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                    color: lightGrey,
+                    fontSize: 14,
+                  ),
+            ),
           ],
         ),
-        ElevatedButton(
-          onPressed: () {},
-          child: Text("Continue"),
-          // style: ,
+        const SizedBox(height: 8),
+        SizedBox(
+          width: double.infinity,
+          child: ElevatedButton(
+            onPressed: () {},
+            child: Text(buttonText),
+            // style: ,
+          ),
         ),
-        const Text("Alredy logged in?"),
+        RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: "Already have an account? ",
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      color: lightGrey,
+                    ),
+              ),
+              TextSpan(
+                text: "Login here",
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      color: primary,
+                      fontWeight: FontWeight.bold,
+                    ),
+                recognizer: TapGestureRecognizer()..onTap = () {},
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }
