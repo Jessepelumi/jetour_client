@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jetour_client/auth/views/onboarding/onboarding.dart';
+//import 'package:jetour_client/auth/views/onboarding/onboarding.dart';
+import 'package:jetour_client/auth/views/register/register.dart';
 import 'package:jetour_client/core/theme/elevated_button.dart';
 import 'package:jetour_client/core/util/colors.dart';
 
@@ -15,7 +16,7 @@ class App extends StatelessWidget {
         primaryColor: primary,
         elevatedButtonTheme: AppElevatedButtonTheme.appElevatedButtonTheme,
       ),
-      home: const Onboarding(),
+      home: const Register(),
     );
   }
 }
