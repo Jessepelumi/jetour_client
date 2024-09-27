@@ -61,3 +61,19 @@ class RegistrationTextField extends StatelessWidget {
     );
   }
 }
+
+class _VerifyingState extends StatefulWidget {
+  const _VerifyingState({super.key});
+
+  @override
+  State<_VerifyingState> createState() => __VerifyingStateState();
+}
+
+class __VerifyingStateState extends State<_VerifyingState> {
+  @override
+  Widget build(BuildContext context) {
+    return  Center(
+        
+    );
+  }
+}
