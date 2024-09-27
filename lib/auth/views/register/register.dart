@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:jetour_client/auth/views/register/registration_details.dart';
 import 'package:jetour_client/auth/views/register/widgets/registration_textfield.dart';
 import 'package:jetour_client/auth/views/register/widgets/terms_privacy.dart';
 import 'package:jetour_client/auth/views/shared/login_link.dart';
@@ -60,7 +62,7 @@ class Register extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => const RegistrationDetails()),
                   child: const Text("Continue"),
                 ),
               ),
