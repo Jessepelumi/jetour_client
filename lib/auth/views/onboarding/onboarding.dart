@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
 import 'package:jetour_client/auth/controllers/onboarding_controller.dart';
 import 'package:jetour_client/auth/views/onboarding/onboarding_view.dart';
 import 'package:jetour_client/auth/views/onboarding/widgets/dot_navigation.dart';
 import 'package:jetour_client/auth/views/onboarding/widgets/onboarding_greeting.dart';
+import 'package:jetour_client/auth/views/register/register.dart';
 import 'package:jetour_client/core/util/colors.dart';
 
 class Onboarding extends StatelessWidget {
@@ -37,13 +39,14 @@ class Onboarding extends StatelessWidget {
               PageView(
                 controller: controller.pageController,
                 onPageChanged: controller.updatePageIndicator,
-                children: const [
+                children: [
                   OnboardingView(
                     image: "assets/image/contactless.png",
                     title: "Make Payments Anytime, Anywhere",
                     subtitle:
                         "Send and receive money even without internet with our offline NFC payment solution, keeping you connected to your finances, no matter where you are.",
                     buttonText: "Continue",
+                    action: () {},
                   ),
                   OnboardingView(
                     image: "assets/image/shield-locked.png",
@@ -51,6 +54,7 @@ class Onboarding extends StatelessWidget {
                     subtitle:
                         "Every transaction is secured with encryption and tokenization, ensuring your data stays safe. Biometric and PIN verification keeps your account secure!",
                     buttonText: "Continue",
+                    action: () {},
                   ),
                   OnboardingView(
                     image: "assets/image/sync-lock.png",
@@ -58,6 +62,7 @@ class Onboarding extends StatelessWidget {
                     subtitle:
                         "Offline payments are automatically syncned when you're back online, so you never miss a beat. Get real-time notifications once transactions get synced.",
                     buttonText: "Get Started",
+                    action: () => Get.to(() => const Register()),
                   ),
                 ],
               ),
