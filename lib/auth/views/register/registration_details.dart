@@ -4,6 +4,7 @@ import 'package:jetour_client/auth/views/register/widgets/terms_privacy.dart';
 import 'package:jetour_client/auth/views/shared/login_link.dart';
 import 'package:jetour_client/core/util/colors.dart';
 import 'package:jetour_client/core/util/sizes.dart';
+import 'package:jetour_client/shared/jetour_elevated_button.dart';
 
 class RegistrationDetails extends StatelessWidget {
   const RegistrationDetails({super.key});
@@ -37,15 +38,15 @@ class RegistrationDetails extends StatelessWidget {
                 placeholder: "Enter full name here",
               ),
               const SizedBox(height: small),
-               const RegistrationTextField(
+              const RegistrationTextField(
                 label: "Bank Verification Number (BVN)",
                 placeholder: "Enter 10 digits BVN",
               ),
               const SizedBox(height: small),
-               const RegistrationTextField(
-                isRequired: false,
+              const RegistrationTextField(
                 label: "National Identitiy Number",
                 placeholder: "Enter NIN Number",
+                isRequired: false,
               ),
               const SizedBox(height: small),
 
@@ -68,12 +69,9 @@ class RegistrationDetails extends StatelessWidget {
             children: [
               const TermsAndPrivacy(),
               const SizedBox(height: smallMedium),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: const Text("Continue"),
-                ),
+              JetourElevatedButton(
+                buttonAction: () {},
+                buttonText: "Continue",
               ),
             ],
           ),
