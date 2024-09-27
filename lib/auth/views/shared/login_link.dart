@@ -1,5 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:jetour_client/auth/views/login/login.dart';
 import 'package:jetour_client/core/util/colors.dart';
 
 class LoginLink extends StatelessWidget {
@@ -14,14 +16,19 @@ class LoginLink extends StatelessWidget {
         children: [
           TextSpan(
             text: "Already have an account? ",
-            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: lightGrey, fontWeight: FontWeight.bold),
+            style: Theme.of(context)
+                .textTheme
+                .bodyLarge
+                ?.copyWith(color: lightGrey, fontWeight: FontWeight.bold),
           ),
           TextSpan(
             text: "Login here",
-            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: primary, fontWeight: FontWeight.bold),
-            recognizer: TapGestureRecognizer()..onTap = () {},
+            style: Theme.of(context)
+                .textTheme
+                .bodyLarge
+                ?.copyWith(color: primary, fontWeight: FontWeight.bold),
+            recognizer: TapGestureRecognizer()
+              ..onTap = () => Get.to(() => const Login()),
           ),
         ],
       ),
