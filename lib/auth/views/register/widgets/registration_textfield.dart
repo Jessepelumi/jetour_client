@@ -63,7 +63,7 @@ class RegistrationTextField extends StatelessWidget {
 }
 
 class _VerifyingState extends StatefulWidget {
-  const _VerifyingState({super.key});
+  const _VerifyingState();
 
   @override
   State<_VerifyingState> createState() => __VerifyingStateState();
@@ -72,8 +72,6 @@ class _VerifyingState extends StatefulWidget {
 class __VerifyingStateState extends State<_VerifyingState> {
   @override
   Widget build(BuildContext context) {
-    return  Center(
-        
-    );
+    return const Center();
   }
 }

@@ -10,10 +10,10 @@ class RegistrationDetails extends StatefulWidget {
   const RegistrationDetails({super.key});
 
   @override
-  _RegistrationDetailsState createState() => _RegistrationDetailsState();
+  RegistrationDetailsState createState() => RegistrationDetailsState();
 }
 
-class _RegistrationDetailsState extends State<RegistrationDetails> {
+class RegistrationDetailsState extends State<RegistrationDetails> {
   bool _isLoading = false;
 
   void _onContinue() async {
@@ -130,7 +130,7 @@ class _RegistrationDetailsState extends State<RegistrationDetails> {
 
 // Dummy NextScreen for navigation
 class NextScreen extends StatelessWidget {
-  const NextScreen({Key? key}) : super(key: key);
+  const NextScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

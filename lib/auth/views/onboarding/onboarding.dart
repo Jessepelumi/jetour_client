@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/instance_manager.dart';
 import 'package:jetour_client/auth/controllers/onboarding_controller.dart';
 import 'package:jetour_client/auth/views/onboarding/onboarding_view.dart';
 import 'package:jetour_client/auth/views/onboarding/widgets/dot_navigation.dart';
