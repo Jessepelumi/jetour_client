@@ -3,7 +3,9 @@ import 'package:jetour_client/core/util/sizes.dart';
 
 class InformationContainer extends StatelessWidget {
   const InformationContainer({
-    super.key, required this.label, required this.color,
+    super.key,
+    required this.label,
+    required this.color,
   });
 
   final String label;
@@ -18,6 +20,9 @@ class InformationContainer extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: color.withOpacity(0.3),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(extraSmall),
+        ),
       ),
       child: Text(
         label,
