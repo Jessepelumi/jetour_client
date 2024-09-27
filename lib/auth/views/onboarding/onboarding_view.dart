@@ -10,9 +10,11 @@ class OnboardingView extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.buttonText,
+    required this.action,
   });
 
   final String image, title, subtitle, buttonText;
+  final VoidCallback action;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +51,7 @@ class OnboardingView extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: action,
             child: Text(buttonText),
             // style: ,
           ),
