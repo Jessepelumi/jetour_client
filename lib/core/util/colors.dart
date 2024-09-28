@@ -14,3 +14,4 @@ const primary = Color(0xFF0062F6);
 const activeButton = Color(0xFF0057DB);
 const red = Color(0xFFA11A1A);
 const orange = Color(0xFFC3681E);
+const green = Color(0xFF089527);
