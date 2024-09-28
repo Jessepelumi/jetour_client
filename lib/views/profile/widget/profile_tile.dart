@@ -32,6 +32,7 @@ class ProfileTile extends StatelessWidget {
                 const SizedBox(width: small),
                 Text(
                   title,
+                  overflow: TextOverflow.ellipsis,
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ],
