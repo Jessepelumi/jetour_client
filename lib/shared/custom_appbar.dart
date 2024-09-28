@@ -59,19 +59,16 @@ class PageAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: small),
-      child: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text(
-          title,
-          style: Theme.of(context)
-              .textTheme
-              .titleLarge
-              ?.copyWith(fontWeight: FontWeight.bold, fontSize: large),
-        ),
-        centerTitle: false,
+    return AppBar(
+      automaticallyImplyLeading: false,
+      title: Text(
+        title,
+        style: Theme.of(context)
+            .textTheme
+            .titleLarge
+            ?.copyWith(fontWeight: FontWeight.bold, fontSize: large),
       ),
+      centerTitle: false,
     );
   }
 
