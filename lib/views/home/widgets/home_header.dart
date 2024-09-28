@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jetour_client/core/util/colors.dart';
 import 'package:jetour_client/core/util/sizes.dart';
 import 'package:jetour_client/shared/information_container.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
@@ -55,7 +56,12 @@ class HomeHeader extends StatelessWidget {
               "Internet status:",
               style: Theme.of(context).textTheme.labelSmall,
             ),
-            const InformationContainer(label: "Online", color: green),
+            const InformationContainer(
+              hasAsset: true,
+              asset: PhosphorIconsFill.dot,
+              label: "Online",
+              color: green,
+            ),
           ],
         ),
       ],
