@@ -29,12 +29,15 @@ class InformationContainer extends StatelessWidget {
         ),
       ),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
           if (hasAsset == true)
             Icon(
               asset,
               color: color,
+              size: smallMedium,
             ),
+          const SizedBox(width: extraSmall),
           Text(
             label,
             style:
