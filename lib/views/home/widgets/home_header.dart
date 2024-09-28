@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jetour_client/core/util/colors.dart';
 import 'package:jetour_client/core/util/sizes.dart';
 import 'package:jetour_client/shared/information_container.dart';
+import 'package:jetour_client/shared/initials_avatar.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class HomeHeader extends StatelessWidget {
@@ -16,23 +17,7 @@ class HomeHeader extends StatelessWidget {
       children: [
         Row(
           children: [
-            Container(
-              width: 50,
-              height: 50,
-              decoration: BoxDecoration(
-                color: primary,
-                borderRadius: BorderRadius.circular(100),
-              ),
-              child: Center(
-                child: Text(
-                  "JA",
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium
-                      ?.copyWith(color: white, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
+            const InitialsAvatar(),
             const SizedBox(width: small),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,3 +53,4 @@ class HomeHeader extends StatelessWidget {
     );
   }
 }
+
