@@ -43,7 +43,7 @@ class HomeHeader extends StatelessWidget {
             ),
             const InformationContainer(
               hasAsset: true,
-              asset: PhosphorIconsFill.dot,
+              asset: PhosphorIconsFill.radioButton,
               label: "Online",
               color: green,
             ),
@@ -53,4 +53,3 @@ class HomeHeader extends StatelessWidget {
     );
   }
 }
-
