@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:jetour_client/core/util/colors.dart';
 import 'package:jetour_client/core/util/sizes.dart';
+import 'package:jetour_client/router/navigation.dart';
 import 'package:jetour_client/shared/section_header.dart';
 import 'package:jetour_client/views/home/widgets/action_buttons.dart';
 import 'package:jetour_client/views/home/widgets/balance_summary.dart';
@@ -51,6 +53,8 @@ class Home extends StatelessWidget {
           amount: "18,200.00"),
     ];
 
+    final NavigationController navigationController = Get.find();
+
     return SafeArea(
       child: SingleChildScrollView(
         child: Padding(
@@ -100,7 +104,9 @@ class Home extends StatelessWidget {
 
               // transaction tile
               SectionHeader(
-                action: () {},
+                action: () {
+                  navigationController.selectedIndex(1);
+                },
                 title: "Transactions",
                 actionText: "View all",
               ),
