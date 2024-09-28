@@ -8,11 +8,13 @@ class ProfileTile extends StatelessWidget {
     required this.title,
     required this.asset,
     required this.action,
+    this.isLogout = false,
   });
 
   final String title;
   final IconData asset;
   final VoidCallback action;
+  final bool? isLogout;
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +30,18 @@ class ProfileTile extends StatelessWidget {
             onTap: action,
             child: Row(
               children: [
-                Icon(asset),
+                Icon(
+                  asset,
+                  color: isLogout! ? red : black2,
+                ),
                 const SizedBox(width: small),
                 Text(
                   title,
                   overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.bodyLarge,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyLarge
+                      ?.copyWith(color: isLogout! ? red : black2),
                 ),
               ],
             ),
