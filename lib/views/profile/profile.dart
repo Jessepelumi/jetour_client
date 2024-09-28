@@ -163,6 +163,48 @@ class Profile extends StatelessWidget {
                 title: "Devices",
                 asset: PhosphorIconsRegular.deviceMobileSpeaker,
               ),
+              const SizedBox(height: small),
+
+              // help & support
+              const SectionHeader(
+                title: "Help & Support",
+                actionText: "",
+              ),
+              const SizedBox(height: small),
+              ProfileTile(
+                action: () {},
+                title: "Support",
+                asset: PhosphorIconsRegular.chatCircleDots,
+              ),
+              ProfileTile(
+                action: () {},
+                title: "Frequently Asked Questions (FAQs)",
+                asset: PhosphorIconsRegular.question,
+              ),
+              const SizedBox(height: small),
+
+              // account action
+              const SectionHeader(
+                title: "Account Actions",
+                actionText: "",
+              ),
+              const SizedBox(height: small),
+              ProfileTile(
+                action: () {},
+                title: "Refer a friend",
+                asset: PhosphorIconsRegular.circlesThreePlus,
+              ),
+              ProfileTile(
+                action: () {},
+                title: "Close Accout (Application)",
+                asset: PhosphorIconsRegular.trashSimple,
+              ),
+              ProfileTile(
+                action: () {},
+                title: "Log out",
+                asset: PhosphorIconsRegular.signOut,
+                isLogout: true,
+              ),
             ],
           ),
         ),
