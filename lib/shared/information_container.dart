@@ -25,7 +25,7 @@ class InformationContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: color.withOpacity(0.3),
         borderRadius: const BorderRadius.all(
-          Radius.circular(extraSmall),
+          Radius.circular(smallMedium),
         ),
       ),
       child: Row(
