@@ -12,7 +12,7 @@ class BalanceSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(smallMedium),
+      padding: const EdgeInsets.all(smallMedium),
       decoration: BoxDecoration(
         color: primary,
         borderRadius: BorderRadius.circular(small),
@@ -24,7 +24,7 @@ class BalanceSummary extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                padding: EdgeInsets.all(extraSmall),
+                padding: const EdgeInsets.all(extraSmall),
                 decoration: BoxDecoration(
                   color: white.withOpacity(0.4),
                   borderRadius: BorderRadius.circular(small),
@@ -34,8 +34,7 @@ class BalanceSummary extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .labelLarge
-                      ?.copyWith(
-                          color: white, fontWeight: FontWeight.bold),
+                      ?.copyWith(color: white, fontWeight: FontWeight.bold),
                 ),
               ),
               Container(
@@ -45,17 +44,20 @@ class BalanceSummary extends StatelessWidget {
                   color: white,
                   borderRadius: BorderRadius.circular(small),
                 ),
-                child: Icon(
+                child: const Icon(
                   PhosphorIconsRegular.eyeSlash,
                 ),
               ),
             ],
           ),
           const SizedBox(height: medium),
-          AmountText(),
+          const AmountText(
+            isBalance: true,
+            amount: "6,120,390.15",
+          ),
           const SizedBox(height: extraSmall),
           Container(
-            padding: EdgeInsets.all(extraSmall),
+            padding: const EdgeInsets.all(extraSmall),
             decoration: BoxDecoration(
               color: white.withOpacity(0.4),
               borderRadius: BorderRadius.circular(small),
@@ -75,8 +77,7 @@ class BalanceSummary extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .labelSmall
-                      ?.copyWith(
-                          color: white, fontWeight: FontWeight.bold),
+                      ?.copyWith(color: white, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -86,4 +87,3 @@ class BalanceSummary extends StatelessWidget {
     );
   }
 }
-
