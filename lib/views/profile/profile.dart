@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:jetour_client/core/util/colors.dart';
 import 'package:jetour_client/core/util/sizes.dart';
+import 'package:jetour_client/shared/custom_appbar.dart';
 import 'package:jetour_client/shared/information_container.dart';
+import 'package:jetour_client/shared/initials_avatar.dart';
+import 'package:jetour_client/shared/section_header.dart';
+import 'package:jetour_client/views/profile/widget/profile_tile.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class Profile extends StatelessWidget {
@@ -10,115 +14,112 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Profile',
-          style: TextStyle(fontSize: extraLarge, fontWeight: FontWeight.bold),
-        ),
-      ),
+      appBar: const PageAppBar(title: "Profile"),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: medium),
+        padding: const EdgeInsets.symmetric(
+          horizontal: smallMedium,
+          vertical: small,
+        ),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: const EdgeInsets.all(smallLarge),
+                padding: const EdgeInsets.all(medium),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(smallMedium),
-                    color: white),
+                  borderRadius: BorderRadius.circular(small),
+                  color: white,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const CircleAvatar(
-                      radius: 40,
-                      backgroundColor: activeButton,
-                      child: Text(
-                        'JA',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: extraLarge,
-                        ),
-                      ),
-                    ),
-                    const Text(
+                    // initials
+                    const InitialsAvatar(),
+
+                    // name
+                    Text(
                       'Jesse Adesina',
-                      style: TextStyle(
-                          fontSize: extraLarge, fontWeight: FontWeight.bold),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyLarge
+                          ?.copyWith(fontWeight: FontWeight.bold, fontSize: 20),
                     ),
-                    const SizedBox(
-                      width: small,
+
+                    // email
+                    Text(
+                      'jesse.adesina@example.com',
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelMedium
+                          ?.copyWith(color: lightGrey),
                     ),
-                    const Row(
-                      children: [
-                        Icon(
-                          Icons.mail_outlined,
-                        ),
-                        Text(
-                          'jesse.adesina@example.com',
-                          style: TextStyle(fontSize: medium, color: lightGrey),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: small,
-                    ),
+                    const SizedBox(height: small),
+
+                    // varification
                     const InformationContainer(
-                        label: 'AccountVerified', color: Colors.green),
-                    const SizedBox(
-                      height: small,
+                      label: "Account Verified",
+                      color: green,
+                      hasAsset: true,
+                      asset: PhosphorIconsFill.sealCheck,
                     ),
+                    const SizedBox(height: medium),
+
+                    // edit
                     Row(
                       children: [
-                        Container(
-                          padding: const EdgeInsets.all(extraSmall),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color:
-                                  Colors.black, // Set the color of the border
-                              width: 1, // Set the width of the border
+                        GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            padding: const EdgeInsets.all(small),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: lightGrey),
+                              borderRadius: BorderRadius.circular(small),
                             ),
-                            borderRadius: BorderRadius.circular(
-                                8), // Optional: round the corners
-                          ),
-                          child: const Row(
-                            children: [
-                              Icon(Icons.edit_outlined),
-                              SizedBox(
-                                width: small,
-                              ),
-                              Text(
-                                'Edit Profile',
-                                style: TextStyle(fontSize: medium),
-                              )
-                            ],
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const Icon(
+                                  PhosphorIconsBold.pencilSimple,
+                                  size: medium,
+                                ),
+                                const SizedBox(width: extraSmall),
+                                Text(
+                                  "Edit Profile",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall
+                                      ?.copyWith(fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                        const SizedBox(
-                          width: small,
-                        ),
-                        Container(
-                          padding: const EdgeInsets.all(extraSmall),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color:
-                                  Colors.black, // Set the color of the border
-                              width: 1, // Set the width of the border
+                        const SizedBox(width: small),
+                        GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            padding: const EdgeInsets.all(small),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: lightGrey),
+                              borderRadius: BorderRadius.circular(small),
                             ),
-                            borderRadius: BorderRadius.circular(
-                                8), // Optional: round the corners
-                          ),
-                          child: const Row(
-                            children: [
-                              Icon(Icons.photo_library_outlined),
-                              SizedBox(
-                                width: small,
-                              ),
-                              Text(
-                                'Update Profile Photo',
-                                style: TextStyle(fontSize: medium),
-                              )
-                            ],
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const Icon(
+                                  PhosphorIconsBold.image,
+                                  size: medium,
+                                ),
+                                const SizedBox(width: extraSmall),
+                                Text(
+                                  "Update Profile Picture",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall
+                                      ?.copyWith(fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -126,80 +127,46 @@ class Profile extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: smallMedium,
+              const SizedBox(height: small),
+
+              // personal data
+              const SectionHeader(
+                title: "Personal Data",
+                actionText: "",
               ),
-              const SectionTitle(title: 'Personal Data',),
-              const SizedBox(
-                height: small,
+              const SizedBox(height: small),
+              ProfileTile(
+                action: () {},
+                title: "Personal data",
+                asset: PhosphorIconsRegular.userGear,
               ),
-              const ListTile(
-                leading: Icon(PhosphorIconsRegular.user),
-                title: Text('Personal data'),
-                tileColor: white,
+              const SizedBox(height: small),
+
+              // security
+              const SectionHeader(
+                title: "Security",
+                actionText: "",
               ),
-              const SizedBox(
-                height: small,
+              const SizedBox(height: small),
+              ProfileTile(
+                action: () {},
+                title: "Change Pin",
+                asset: PhosphorIconsRegular.lockSimple,
               ),
-              const SectionTitle(title: 'Security',),
-              const Column(
-                children: [
-                  ListTile(
-                  leading: Icon(PhosphorIconsRegular.lockSimple),
-                    title: Text('Change PIN'),
-                    tileColor: white,
-                  ),
-                  ListTile(
-                    leading: Icon(PhosphorIconsRegular.shieldCheck),
-                    title: Text('Two-factor authentication (2FA)'),
-                    tileColor: white,
-                  ),
-                  ListTile(
-                    leading: Icon(PhosphorIconsRegular.deviceMobileCamera),
-                    title: Text('Devices'),
-                    tileColor: white,
-                  ),
-                ],
+              ProfileTile(
+                action: () {},
+                title: "Two-factor authentication (2FA)",
+                asset: PhosphorIconsRegular.shieldStar,
               ),
-              const SectionTitle(title: 'Display',),
-              const SizedBox(
-                height: small,
-              ),
-              const Column(
-                children: [
-                  ListTile(
-                   leading: Icon(PhosphorIconsRegular.moon),
-                    title: Text('Theme'),
-                    tileColor: white,
-                  ),
-                  ListTile(
-                   leading: Icon(PhosphorIconsRegular.globe),
-                    title: Text('Language'),
-                    tileColor: white,
-                  ),
-                ],
+              ProfileTile(
+                action: () {},
+                title: "Devices",
+                asset: PhosphorIconsRegular.deviceMobileSpeaker,
               ),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class SectionTitle extends StatelessWidget {
-  final String title; // Add a field to hold the title text
-
-  const SectionTitle({
-    Key? key,
-    required this.title, // Make the title parameter required
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      title, // Use the title passed to the widget
-      style: const TextStyle(fontSize: 20, color: Colors.grey), // Adjust font size and color as needed
     );
   }
 }
