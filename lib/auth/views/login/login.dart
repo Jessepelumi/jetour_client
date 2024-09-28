@@ -52,6 +52,7 @@ class Login extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const InformationContainer(
+                    hasAsset: false,
                     label: "Incorrect Code",
                     color: orange,
                   ),
