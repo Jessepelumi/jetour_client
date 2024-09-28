@@ -11,7 +11,8 @@ class TransactionTile extends StatelessWidget {
     required this.title,
     required this.time,
     required this.day,
-    this.isBalance = false, required this.amount,
+    this.isBalance = false,
+    required this.amount,
   });
 
   final bool isBalance, isCredit;
@@ -21,9 +22,11 @@ class TransactionTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: smallMedium),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         border: Border(
-          bottom: BorderSide(color: lightGrey),
+          bottom: BorderSide(
+            color: lightGrey.withOpacity(0.4),
+          ),
         ),
       ),
       child: Row(
