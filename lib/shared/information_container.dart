@@ -6,10 +6,14 @@ class InformationContainer extends StatelessWidget {
     super.key,
     required this.label,
     required this.color,
+    this.hasAsset = false,
+    this.asset,
   });
 
   final String label;
   final Color color;
+  final bool hasAsset;
+  final IconData? asset;
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +28,19 @@ class InformationContainer extends StatelessWidget {
           Radius.circular(extraSmall),
         ),
       ),
-      child: Text(
-        label,
-        style: Theme.of(context).textTheme.labelMedium?.copyWith(color: color),
+      child: Row(
+        children: [
+          if (hasAsset == true)
+            Icon(
+              asset,
+              color: color,
+            ),
+          Text(
+            label,
+            style:
+                Theme.of(context).textTheme.labelMedium?.copyWith(color: color),
+          ),
+        ],
       ),
     );
   }
