@@ -8,11 +8,13 @@ class AmountText extends StatelessWidget {
     required this.isBalance,
     this.isCredit,
     required this.amount,
+    this.color = white,
   });
 
   final bool isBalance;
   final bool? isCredit;
   final String amount;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class AmountText extends StatelessWidget {
               ? Theme.of(context)
                   .textTheme
                   .titleLarge
-                  ?.copyWith(color: white, fontWeight: FontWeight.bold)
+                  ?.copyWith(color: color, fontWeight: FontWeight.bold)
               : Theme.of(context)
                   .textTheme
                   .labelLarge
