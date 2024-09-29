@@ -1,3 +1,3 @@
 class AppStrings {
-  static const String leftCaret = "assets/svg/left-caret.svg";
+  static const String nfcDevices = "assets/image/nfc-devices.png";
 }
