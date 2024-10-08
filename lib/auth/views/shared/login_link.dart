@@ -19,14 +19,12 @@ class LoginLink extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .bodyLarge
-                ?.copyWith(color: lightGrey, fontWeight: FontWeight.bold),
+                ?.copyWith(color: lightGrey),
           ),
           TextSpan(
             text: "Login here",
-            style: Theme.of(context)
-                .textTheme
-                .bodyLarge
-                ?.copyWith(color: primary, fontWeight: FontWeight.bold),
+            style:
+                Theme.of(context).textTheme.bodyLarge?.copyWith(color: primary),
             recognizer: TapGestureRecognizer()
               ..onTap = () => Get.to(() => const Login()),
           ),
