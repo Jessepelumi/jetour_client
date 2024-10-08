@@ -9,10 +9,12 @@ class RegistrationTextField extends StatelessWidget {
     required this.label,
     required this.placeholder,
     this.isRequired = true,
+    this.obscure = false,
   });
 
   final String label, placeholder;
   final bool? isRequired;
+  final bool obscure;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +44,9 @@ class RegistrationTextField extends StatelessWidget {
         ),
         const SizedBox(height: extraSmall),
         TextField(
+          obscureText: obscure,
           decoration: InputDecoration(
+            floatingLabelBehavior: FloatingLabelBehavior.never,
             label: Text(
               placeholder,
               style: context.textTheme.labelLarge?.copyWith(color: lightGrey),
