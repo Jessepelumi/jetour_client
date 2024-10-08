@@ -9,11 +9,12 @@ class PinCodeInput extends StatelessWidget {
     required this.label,
     this.isRequired = true,
     required this.pinInputLength,
-    required this.action,
+    required this.action, required this.obscure,
   });
 
   final String label;
   final bool? isRequired;
+  final bool obscure;
   final int pinInputLength;
   final VoidCallback action;
 
@@ -38,7 +39,7 @@ class PinCodeInput extends StatelessWidget {
         const SizedBox(height: extraSmall),
         PinInputScreen(
           lenght: pinInputLength,
-          obscure: false,
+          obscure: obscure,
           onComplete: action,
         ),
       ],
