@@ -7,6 +7,7 @@ import 'package:jetour_client/shared/section_header.dart';
 import 'package:jetour_client/views/home/widgets/action_buttons.dart';
 import 'package:jetour_client/views/home/widgets/balance_summary.dart';
 import 'package:jetour_client/views/home/widgets/home_header.dart';
+import 'package:jetour_client/views/nfc/nfc_screen.dart';
 import 'package:jetour_client/views/transactions/widgets/transaction_tile.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
@@ -89,7 +90,7 @@ class Home extends StatelessWidget {
                     icon: PhosphorIconsRegular.downloadSimple,
                   ),
                   ActionButtons(
-                    action: () {},
+                    action: () => Get.to(() => const NfcScreen()),
                     actionName: "NFC",
                     icon: PhosphorIconsRegular.rss,
                   ),
