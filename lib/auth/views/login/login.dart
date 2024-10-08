@@ -44,6 +44,7 @@ class Login extends StatelessWidget {
                 label: "Enter your password",
                 isRequired: false,
                 pinInputLength: 6,
+                obscure: false,
                 action: () {},
               ),
 
