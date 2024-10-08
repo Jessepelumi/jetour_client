@@ -18,13 +18,15 @@ class LoginLink extends StatelessWidget {
             text: "Already have an account? ",
             style: Theme.of(context)
                 .textTheme
-                .bodyLarge
+                .bodyMedium
                 ?.copyWith(color: lightGrey),
           ),
           TextSpan(
             text: "Login here",
-            style:
-                Theme.of(context).textTheme.bodyLarge?.copyWith(color: primary),
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium
+                ?.copyWith(color: primary),
             recognizer: TapGestureRecognizer()
               ..onTap = () => Get.to(() => const Login()),
           ),
