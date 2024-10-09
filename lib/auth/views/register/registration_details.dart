@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jetour_client/auth/views/register/widgets/registration_textfield.dart';
-import 'package:jetour_client/auth/views/register/widgets/terms_privacy.dart';
-import 'package:jetour_client/auth/views/shared/login_link.dart';
 import 'package:jetour_client/core/util/colors.dart';
 import 'package:jetour_client/core/util/sizes.dart';
 import 'package:jetour_client/router/navigation.dart';
