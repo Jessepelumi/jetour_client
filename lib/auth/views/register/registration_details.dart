@@ -82,12 +82,7 @@ class NextScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Create an account",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-      ),
+      appBar: const CustomAppBar(title: "Create an account"),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(small),
@@ -97,14 +92,11 @@ class NextScreen extends StatelessWidget {
                 "assets/image/person-check.png",
                 height: MediaQuery.of(context).size.height * 0.45,
               ),
-              // SizedBox(
-              //   height: MediaQuery.of(context).size.height * 0.01,
-              // ),
               Text(
                 "Registration Successful!",
-                style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.bold,
-                      color: black,
+                      color: black2.withOpacity(0.6),
                     ),
                 textAlign: TextAlign.center,
               ),
@@ -113,9 +105,7 @@ class NextScreen extends StatelessWidget {
                 child: Text(
                   "You're all set to start making payments—online or offline. Click “Continue” to get started!",
                   textAlign: TextAlign.center, // Center the text
-                  style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                        fontWeight: FontWeight.normal,
-                        fontSize: smallLarge,
+                  style: Theme.of(context).textTheme.labelLarge?.copyWith(
                         color: lightGrey,
                       ),
                 ),
